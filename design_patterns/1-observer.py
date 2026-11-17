@@ -41,7 +41,6 @@ class SmsObserver:
         print(f"sms:{topic}={data}")
 
 
-
 def main() -> None:
     subject = NewsSubject()
 
@@ -52,8 +51,6 @@ def main() -> None:
     subject.subscribe(log, topics={"sports", "breaking"})
     subject.subscribe(email)  # None = receives all topics
     subject.subscribe(sms, topics={"breaking"})
-
-    
 
     subject.notify("weather", "rain")
     subject.notify("sports", "goal")
